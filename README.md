@@ -8,10 +8,10 @@ yarn start:dev
 ## Migrations
 
 ```
-yarn typeorm migration:create migrations/<name>
+yarn migration:create migrations/<name>
 ```
 ```
-yarn typeorm migration:run
+yarn migration:run
 ```
 
 ## Build
