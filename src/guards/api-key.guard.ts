@@ -22,6 +22,8 @@ export class ApiKeyGuard implements CanActivate {
       throw new UnauthorizedException('API key not configured');
     }
 
+    console.log('Validating API key:', apiKey);
+
     if (!apiKey || apiKey !== validApiKey) {
       throw new UnauthorizedException('Invalid API key');
     }
