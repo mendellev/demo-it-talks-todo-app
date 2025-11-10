@@ -3,15 +3,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TodosModule } from './todos/todos.module';
-import { Todo } from './todos/entities/todo.entity';
+import { typeormConfig } from './config/typeorm.config';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: '../db/todos.db',
-      entities: [Todo],
-    }),
+    TypeOrmModule.forRoot(typeormConfig),
     TodosModule,
   ],
   controllers: [AppController],
