@@ -34,6 +34,15 @@ async function bootstrap() {
     .setDescription('A simple Todo application API with CRUD operations')
     .setVersion('1.0')
     .addTag('todos')
+    .addApiKey(
+      {
+        type: 'apiKey',
+        name: 'x-api-key',
+        in: 'header',
+        description: 'API Key for authorization',
+      },
+      'api-key',
+    )
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
